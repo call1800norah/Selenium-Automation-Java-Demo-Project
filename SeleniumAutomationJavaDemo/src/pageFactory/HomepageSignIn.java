@@ -6,10 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomepageSignIn {
-	WebDriver driver;
-	public HomepageSignIn(WebDriver driver) {
-		this.driver = driver;
-	}
+
 	
 	//Create An Account Section
 		@FindBy(xpath = "//a[@class='login' and @title='Log in to your customer account']")

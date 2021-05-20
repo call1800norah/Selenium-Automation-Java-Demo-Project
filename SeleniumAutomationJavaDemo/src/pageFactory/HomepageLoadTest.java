@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomepageLoadTest{
-	 private WebDriver driver;
+
 
 	 @FindBy(xpath = "//div[@id='page']")
 	  public WebElement Wholepage;
@@ -67,12 +67,8 @@ public class HomepageLoadTest{
 	 public List<WebElement> CustomInfoEachBlocks;
 
 
-
-		 
-	public HomepageLoadTest(WebDriver driver) {
-			 this.driver = driver;
-		 }
- 
+	
+    //Method to verify homepage is loading
 	public void VerifyHomepageLoadTest() {
     	
 			WebElement[] arrayList = {Wholepage,

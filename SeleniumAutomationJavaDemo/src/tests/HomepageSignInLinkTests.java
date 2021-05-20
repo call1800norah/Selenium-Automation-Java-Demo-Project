@@ -21,6 +21,8 @@ public class HomepageSignInLinkTests extends TestBase{
 	 private String firstname = "Tester";
      private String lastName = "Test";
      Random random = new Random();
+     
+     // Validate homepage loading and fill out 'Create an Account' form in Sign In Page. 
 	 @Test
 	 public void CreateAnAccountTest() {
 		signInLink =PageFactory.initElements(driver, HomepageSignIn.class);
@@ -52,11 +54,11 @@ public class HomepageSignInLinkTests extends TestBase{
 			    Thread.sleep(5000);
 			}
 		catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}		 		
 		}
 	 
+	 //Validate inside the Sign in page, 'Your Personal Information' section form is successfully loaded and filled out.
 	 @Test
 	 public void SignInPageYourPersonalInfoForm() {
 		 signInLink =PageFactory.initElements(driver, HomepageSignIn.class);
@@ -100,8 +102,9 @@ public class HomepageSignInLinkTests extends TestBase{
 		 
 	 }
 	 
+	 //Validate inside the Sign in page, Your Address section is loaded and filled out successfully.
 	 @Test
-	 public void SignInPageYourAddressForm() throws InvocationTargetException {
+	 public void SignInPageYourAddressForm() {
          signInLink =PageFactory.initElements(driver, HomepageSignIn.class);
 		 
 		 signInLink.SignInLink.click();		
@@ -138,7 +141,6 @@ public class HomepageSignInLinkTests extends TestBase{
 		 signInLink.CityInputBox.sendKeys("St.Louis");
 		 
 
-		 //signInLink.StateOptions.stream().filter((e)->e =!(null) & (e)->e.isDisplayed()));
 		 signInLink.SelectState.click();
 		 List<WebElement> stateOption = new ArrayList<WebElement>();
 		 for(WebElement state:signInLink.StateOptions) {

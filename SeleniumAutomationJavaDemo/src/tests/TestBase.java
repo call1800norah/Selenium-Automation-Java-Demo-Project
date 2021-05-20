@@ -61,6 +61,7 @@ public WebElement element;
         driver.quit();
     }
 
+    //Wait for IWebElement to be displayed using WebDriverWait
     public void WaitForDisplayed(WebElement element)
     {
     	Assert.assertNotNull("The element return as null.", element);
@@ -76,6 +77,8 @@ public WebElement element;
 	    	System.out.print("WaitForDisplayed timed out in 30seconds");
         }   	    	
     }
+    
+    //Wait for IWebElement to be enabled using WebDriverWait
     public void WaitForEnabled(WebElement element)
     {
     	Assert.assertNotNull("The element return as null.", element);
@@ -92,7 +95,7 @@ public WebElement element;
         }   	    	
     }
 
-
+    //Verify a list of elements are all displayed.
     public void ElementListDisplayed(List<WebElement> elements)
     {  	
 	 for(WebElement e:elements) {
@@ -101,6 +104,7 @@ public WebElement element;
        }
     }
     
+    //Verify a array of elements are all displayed.
     public void ElementArrayDisplayed(WebElement[] elements)
     {  	
 	 for(WebElement e:elements) {
@@ -108,8 +112,8 @@ public WebElement element;
 	 Assert.assertTrue(e.isDisplayed());
        }
     }
-    //wait for the element to be clickable. Retry maxTries times.
     
+    //wait for the element to be clickable. Retry maxTries times. 
     public void ClickWhenAble(WebElement element, long maxTries) {
     	WaitForEnabled(element);
     	 for (int retryCount = 1; retryCount <= maxTries; retryCount++) {

@@ -18,7 +18,7 @@ public class HomepageContactUsTests extends TestBase
 	 HomepageLoadTest homePage;
 	 HomepageContactUsTabTest contactUsTab;
 	
-
+    //Method to verify homepage is loading
 	@Test
 	public void HomepageLoadTests() {
 
@@ -31,10 +31,10 @@ public class HomepageContactUsTests extends TestBase
 		ElementListDisplayed(homePage.ProductImageLinks);
 		ElementListDisplayed(homePage.CustomInfoBlocks);
 		ElementListDisplayed(homePage.CustomInfoEachBlocks);
-		System.out.println("Test Passed!");
 		}				
     }
 	
+	//Test for the Contact Us link
 	@Test
 	public void HomepateContactUsTabTests() {
 		homePage =PageFactory.initElements(driver, HomepageLoadTest.class);
@@ -45,13 +45,10 @@ public class HomepageContactUsTests extends TestBase
 		WebElement[] arrayElements = {contactUsTab.HomeIcon, contactUsTab.NavigationPageContact,
 				contactUsTab.CustomerServiceHeader, contactUsTab.SendAMessageHeader};
 		
-		List<WebElement> elements = new ArrayList<>();
-		for(WebElement element : arrayElements) {
-			elements.add(element);
-			assertTrue("element is not displayed",element.isDisplayed());
-		}
-		System.out.println("Test Passed!");
+		ElementArrayDisplayed(arrayElements);
 	}
+	
+	// Test for the subject heading dropdown in the Send Message form 
 	@Test
 	 public void SendAMessageSubjectHeadingDropdownTest() {
 		homePage =PageFactory.initElements(driver, HomepageLoadTest.class);
@@ -65,6 +62,8 @@ public class HomepageContactUsTests extends TestBase
 		System.out.println("Test Passed!");
 		
 	 }
+	
+	//Test for the Email Address, Order Reference and attach file fields in the Send Message form
 	@Test
 	public void SendAMessageEmailAddressAndOrderReferenceTest() {
 		homePage =PageFactory.initElements(driver, HomepageLoadTest.class);

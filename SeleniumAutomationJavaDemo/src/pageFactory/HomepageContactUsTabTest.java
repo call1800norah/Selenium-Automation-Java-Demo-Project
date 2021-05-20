@@ -9,8 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import static org.junit.Assert.*;
 
 public class HomepageContactUsTabTest {
-	WebDriver driver;
-	 
 	
 	//HomepateContactUsTabTest
 	 @FindBy(xpath = "//div[@class='columns-container']")
@@ -38,6 +36,7 @@ public class HomepageContactUsTabTest {
 	 public List<WebElement> SubjectHeadingOptions;
 
 	//SendAMessageSubjectHeadingDropdownTest
+	 
 	 @FindBy(xpath = "//p[normalize-space()='For any question about a product, an order']")
 	  public WebElement CustomeServiceOptionComment;
 	 
@@ -89,7 +88,7 @@ public class HomepageContactUsTabTest {
 	 @FindBy(xpath = "//ul[@class='footer_links clearfix']//a[@class='btn btn-default button button-small']")
 	  public WebElement FooterLinksHome;
 	 
-	 
+	 //Method for the random choice of the Subject Heading dropdown
 	 public void SubjectHeadingRandomChoice() {
 		 SubjectHeadingOptionDropdown.click();
 		
